@@ -44,8 +44,8 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between transition-all duration-300 ${
           scrolled
-            ? "bg-[#0D1117]/90 backdrop-blur-md border-b border-yellow-400/10"
-            : "bg-[#0D1117]/60 backdrop-blur-md border-b border-white/5"
+            ? "bg-[#0D1117]/90 backdrop-blur-md border-b-2 border-yellow-400/10"
+            : "bg-[#0D1117]/60 backdrop-blur-md border-b-2 border-white/5"
         }`}
         style={{ height: "72px",margin:'0 30px' }}
       >
@@ -101,7 +101,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="absolute top-[110%] left-1/2 -translate-x-1/2 bg-[#0D1117]/95 backdrop-blur-md border border-orange-400/20 rounded-xl p-2 min-w-[150px] z-50"
+                  className="absolute top-[110%] left-1/2 -translate-x-1/2 bg-[#0D1117]/95 backdrop-blur-md border border-orange-400/20 rounded-xl p-2 min-w-37.5 z-50"
                 >
                   {moreLinks.map((link) => (
                     <Link
@@ -181,7 +181,7 @@ export default function Navbar() {
       </AnimatePresence>
 
       {/* Animated floating dot below navbar */}
-      <motion.div
+      {/* <motion.div
         animate={{ y: [0, -10, 0], opacity: [0.4, 1, 0.4], scale: [1, 1.3, 1] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         className="fixed left-1/2 -translate-x-1/2 w-2 h-2 bg-yellow-400 rounded-full z-40"
@@ -189,7 +189,7 @@ export default function Navbar() {
           top: "80px",
           boxShadow: "0 0 10px #F0D93B, 0 0 20px rgba(240,217,59,0.4)" 
         }}
-      />
+      /> */}
     </>
   );
 }
