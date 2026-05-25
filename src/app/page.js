@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import About from "@/components/sections/About";
+import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import Technologies from "@/components/sections/Technologies";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero/>
       <About/>
       <Technologies/>
+      <Footer/>
     </main>
   );
 }
