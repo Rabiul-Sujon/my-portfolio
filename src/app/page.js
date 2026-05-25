@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import About from "@/components/sections/About";
 import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
+import Qualification from "@/components/sections/Qualification";
 import Services from "@/components/sections/Services";
 // import Skills from "@/components/sections/Skills";
 import Skills from "@/components/sections/Skills";
@@ -16,6 +17,7 @@ export default function Home() {
       <Technologies/>
       <Skills/>
       <Services/>
+      <Qualification/>
       <Footer/>
     </main>
   );
