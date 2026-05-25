@@ -35,7 +35,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen relative overflow-hidden bg-[#0D1117] flex flex-col items-center justify-center px-6 py-24"
+      className="min-h-screen relative overflow-hidden bg-[#020C1B] flex flex-col items-center justify-center px-6 py-24"
     >
       {/* Blue glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -49,8 +49,8 @@ export default function About() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-bold text-white">About</h2>
-        <p className="mt-2 text-sm text-white/40 tracking-widest uppercase">
+        <h2 className="text-4xl font-bold text-[#CCD6F6]">About</h2>
+        <p className="mt-2 text-sm text-[#CCD6F6]/40 tracking-widest uppercase">
           My Introduction
         </p>
       </motion.div>
@@ -99,14 +99,14 @@ export default function About() {
                 variants={fadeUp}
                 whileHover={{ y: -4 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(240,217,59,0.4)";
+                  e.currentTarget.style.borderColor = "rgba(100,255,218,0.4)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(240,217,59,0.15)";
+                  e.currentTarget.style.borderColor = "rgba(100,255,218,0.15)";
                 }}
                 style={{
                   background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(240,217,59,0.15)",
+                  border: "1px solid rgba(100,255,218,0.15)",
                   backdropFilter: "blur(10px)",
                   borderRadius: "12px",
                   padding: "20px 16px",
@@ -118,11 +118,11 @@ export default function About() {
                   transition: "border-color 0.3s",
                 }}
               >
-                <span style={{ color: "#F0D93B" }}>{stat.icon}</span>
-                <span style={{ fontSize: "15px", fontWeight: 700, color: "#F8F8F8" }}>
+                <span style={{ color: "#64FFDA" }}>{stat.icon}</span>
+                <span style={{ fontSize: "15px", fontWeight: 700, color: "#CCD6F6" }}>
                   {stat.heading}
                 </span>
-                <span style={{ fontSize: "11px", color: "rgba(248,248,248,0.4)", textAlign: "center" }}>
+                <span style={{ fontSize: "11px", color: "rgba(237,242,254,0.4)", textAlign: "center" }}>
                   {stat.sub}
                 </span>
               </motion.div>
@@ -136,7 +136,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             style={{
-              color: "rgba(248,248,248,0.6)",
+              color: "rgba(204,214,246,0.6)",
               fontSize: "15px",
               lineHeight: "1.85",
             }}
@@ -158,18 +158,18 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.45 }}
             whileHover={{
-              borderColor: "rgba(240,217,59,0.4)",
-              color: "#F0D93B",
-              background: "rgba(240,217,59,0.06)",
+              borderColor: "rgba(100,255,218,0.4)",
+              color: "#64FFDA",
+              background: "rgba(100,255,218,0.06)",
             }}
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: "10px",
               padding: "12px 28px",
-              border: "1px solid rgba(248,248,248,0.2)",
+              border: "1px solid rgba(204,214,246,0.2)",
               borderRadius: "8px",
-              color: "#F8F8F8",
+              color: "#CCD6F6",
               fontSize: "14px",
               fontWeight: 500,
               background: "rgba(255,255,255,0.04)",

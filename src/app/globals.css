@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+:root {
+  --bg: #020C1B;
+  --accent: #64FFDA;
+  --secondary: #0EA5E9;
+  --text: #CCD6F6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +18,7 @@ html {
 }
 
 body {
-  background-color: #0D1117;
-  color: #F8F8F8;
+  background-color: #020C1B;
+  color: #CCD6F6;
   overflow-x: hidden;
 }

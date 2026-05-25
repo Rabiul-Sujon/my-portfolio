@@ -83,8 +83,8 @@ function TechIcon({ tech, i }) {
     >
       <div
         style={{
-          width: "90px",
-          height: "90px",
+          width: "76px",
+          height: "76px",
           borderRadius: "50%",
           background: "rgba(255,255,255,0.04)",
           border: "1px solid rgba(255,255,255,0.08)",
@@ -94,8 +94,8 @@ function TechIcon({ tech, i }) {
           transition: "border-color 0.3s, background 0.3s",
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.borderColor = "rgba(240,217,59,0.4)";
-          e.currentTarget.style.background = "rgba(240,217,59,0.06)";
+          e.currentTarget.style.borderColor = "rgba(100,255,218,0.4)";
+          e.currentTarget.style.background = "rgba(100,255,218,0.06)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
@@ -107,8 +107,8 @@ function TechIcon({ tech, i }) {
           src={tech.icon}
           alt={tech.name}
           style={{
-            width: "44px",
-            height: "44px",
+            width: "36px",
+            height: "36px",
             objectFit: "contain",
             filter:
               tech.name === "Express" || tech.name === "Next.js"
@@ -120,7 +120,7 @@ function TechIcon({ tech, i }) {
       <span
         style={{
           fontSize: "13px",
-          color: "rgba(248,248,248,0.5)",
+          color: "rgba(204,214,246,0.5)",
           textAlign: "center",
         }}
       >
@@ -136,11 +136,11 @@ export default function Technologies() {
       id="technologies"
       style={{
         minHeight: "100vh",
-        background: "#0D1117",
+        background: "#020C1B",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        paddingTop: "120px",
+        paddingTop: "60px", // Decreased section top margin/padding
         paddingBottom: "100px",
         position: "relative",
         overflow: "hidden",
@@ -156,12 +156,12 @@ export default function Technologies() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        style={{ textAlign: "center", marginBottom: "80px", zIndex: 10 }}
+        style={{ textAlign: "center", marginBottom: "45px", zIndex: 10 }} // Tightened title spacing
       >
-        <h2 style={{ fontSize: "2.5rem", fontWeight: 700, color: "#F8F8F8", margin: 0 }}>
+        <h2 style={{ fontSize: "2.5rem", fontWeight: 700, color: "#CCD6F6", margin: 0 }}>
           Technologies
         </h2>
-        <p style={{ marginTop: "8px", fontSize: "12px", color: "rgba(248,248,248,0.4)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+        <p style={{ marginTop: "8px", fontSize: "12px", color: "rgba(204,214,246,0.4)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
           My Tech Stack
         </p>
       </motion.div>

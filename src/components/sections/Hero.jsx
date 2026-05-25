@@ -44,11 +44,11 @@ function FloatingDot({ delay }) {
     <motion.div
       animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0 }}
       transition={{ duration: 3, ease: "easeInOut" }}
-      className="fixed w-2 h-2 bg-yellow-400 rounded-full pointer-events-none z-10"
+      className="fixed w-2 h-2 bg-teal-400 rounded-full pointer-events-none z-10"
       style={{
         top: dotPositions[posIndex].top,
         left: dotPositions[posIndex].left,
-        boxShadow: "0 0 10px #F0D93B, 0 0 20px rgba(240,217,59,0.4)",
+        boxShadow: "0 0 10px #64FFDA, 0 0 20px rgba(100,255,218,0.4)",
       }}
     />
   );
@@ -102,8 +102,8 @@ function MovingLine() {
           style={{
             ...line.style,
             background: line.direction.includes("left") || line.direction.includes("right")
-              ? "linear-gradient(to right, transparent, #F0D93B, transparent)"
-              : "linear-gradient(to bottom, transparent, #F0D93B, transparent)",
+              ? "linear-gradient(to right, transparent, #64FFDA, transparent)"
+              : "linear-gradient(to bottom, transparent, #64FFDA, transparent)",
           }}
         />
       ))}
@@ -134,12 +134,12 @@ function TypewriterText({ roles }) {
     return () => clearTimeout(timeout);
   }, [displayed, isDeleting, roleIndex, roles]);
 
-  return <span className="text-yellow-400 font-semibold">{displayed}</span>;
+  return <span className="text-teal-400 font-semibold">{displayed}</span>;
 }
 
 export default function Hero() {
   return (
-   <section id="home" className="min-h-screen relative overflow-hidden bg-[#0D1117]" style={{ paddingTop: "40px" }}>
+    <section id="home" className="min-h-screen relative overflow-hidden bg-[#020C1B]" style={{ paddingTop: "40px" }}>
 
       {/* Blue background glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -155,7 +155,8 @@ export default function Hero() {
       <div className="flex items-center min-h-screen pt-20">
 
         {/* Social icons — fixed far left, vertically centered */}
-<div className="flex flex-col gap-5 shrink-0" style={{ paddingLeft: "40px" }}>          {[
+        <div className="flex flex-col gap-5 shrink-0" style={{ paddingLeft: "40px" }}>
+          {[
             { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/maven-rabiul/" },
             { icon: <FaGithub />, href: "https://github.com/Rabiul-Sujon/" },
             { icon: <FaXTwitter />, href: "https://x.com/MavenRabi98070" },
@@ -165,8 +166,8 @@ export default function Hero() {
               href={s.href}
               target="_blank"
               whileHover={{ scale: 1.2 }}
-              className="w-10 h-10 rounded-full border border-yellow-400/30 bg-yellow-400/5 backdrop-blur-sm flex items-center justify-center text-white text-base transition-all duration-300 hover:border-yellow-400/60 hover:text-yellow-400"
-              style={{ boxShadow: "0 0 8px rgba(240,217,59,0.15)" }}
+              className="w-10 h-10 rounded-full border border-teal-400/30 bg-teal-400/5 backdrop-blur-sm flex items-center justify-center text-[#CCD6F6] text-base transition-all duration-300 hover:border-teal-400/60 hover:text-teal-400"
+              style={{ boxShadow: "0 0 8px rgba(100,255,218,0.15)" }}
             >
               {s.icon}
             </motion.a>
@@ -180,7 +181,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-white/60 text-xl"
+            className="text-[#CCD6F6]/60 text-xl"
           >
             Hey, I&apos;m
           </motion.p>
@@ -189,7 +190,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-6xl font-bold text-white flex items-center gap-4 leading-tight"
+            className="text-6xl font-bold text-[#CCD6F6] flex items-center gap-4 leading-tight"
           >
             Rabiul Sujon
             <motion.span
@@ -205,7 +206,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-2xl text-white/70 flex items-center gap-2"
+            className="text-2xl text-[#CCD6F6]/70 flex items-center gap-2"
           >
             <span>I am a </span>
             <TypewriterText roles={roles} />
@@ -215,7 +216,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="text-white/40 max-w-md leading-relaxed text-base"
+            className="text-[#CCD6F6]/40 max-w-md leading-relaxed text-base"
           >
             🚀 Turning ideas into Stunning Websites 💻<br />
             Available for projects and collaborations ✨
@@ -226,10 +227,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(240,217,59,0.2)" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(100,255,218,0.2)" }}
             whileTap={{ scale: 0.95 }}
             onClick={(e) => createSparkle(e)}
-            className="inline-flex items-center gap-2 px-14 py-5 rounded-full border border-yellow-400/40 bg-yellow-400/5 backdrop-blur-md text-yellow-400 text-lg cursor-pointer transition-all duration-300 hover:bg-yellow-400/10 w-fit"
+            className="inline-flex items-center gap-2 px-14 py-5 rounded-full border border-teal-400/40 bg-teal-400/5 backdrop-blur-md text-teal-400 text-lg cursor-pointer transition-all duration-300 hover:bg-teal-400/10 w-fit"
             style={{ textDecoration: "none", padding: "8px 30px", fontSize: "18px" }}
           >
             Say Hello ✈️
@@ -238,10 +239,10 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex items-center gap-2 text-white/30 text-sm"
+            className="flex items-center gap-2 text-[#CCD6F6]/30 text-sm"
           >
-            <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center pt-1">
-              <div className="w-1 h-2 bg-white/40 rounded-full" />
+            <div className="w-5 h-8 rounded-full border border-[#CCD6F6]/20 flex items-start justify-center pt-1">
+              <div className="w-1 h-2 bg-[#CCD6F6]/40 rounded-full" />
             </div>
             Scroll Down
           </motion.div>
@@ -254,27 +255,27 @@ export default function Hero() {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-            className="absolute w-72 h-72 rounded-full border border-dashed border-yellow-400/60"
+            className="absolute w-72 h-72 rounded-full border border-dashed border-teal-400/60"
           />
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            className="absolute w-80 h-80 rounded-full border border-dashed border-orange-400/10"
+            className="absolute w-80 h-80 rounded-full border border-dashed border-sky-400/10"
           />
 
           {/* Profile photo */}
           <div
-          className="w-64 h-64 rounded-full z-10 relative overflow-hidden"
-           style={{
-           border: "2px solid rgba(240,217,59,0.2)",
-           boxShadow: "0 0 40px rgba(59,130,246,0.15)",
-          }}
-            >
-             <Image
-             src="/profile.jpg"
-             alt="Rabiul Sujon"
-             fill
-             className="object-cover"
+            className="w-64 h-64 rounded-full z-10 relative overflow-hidden"
+            style={{
+              border: "2px solid rgba(100,255,218,0.2)",
+              boxShadow: "0 0 40px rgba(59,130,246,0.15)",
+            }}
+          >
+            <Image
+              src="/profile.jpg"
+              alt="Rabiul Sujon"
+              fill
+              className="object-cover"
             />
           </div>
 
@@ -285,8 +286,8 @@ export default function Hero() {
             className="absolute"
             style={{ top: "calc(50% - 140px)", left: "calc(50% + 60px)" }}
           >
-            <div className="rounded-xl border border-yellow-400/20 bg-[#0D1117]/80 backdrop-blur-sm text-white whitespace-nowrap" style={{ padding: "12px 24px", fontSize: "15px" }}>
-              🎯 <strong className="text-yellow-400">50+</strong> Problem Solving
+            <div className="rounded-xl border border-teal-400/20 bg-[#020C1B]/80 backdrop-blur-sm text-[#CCD6F6] whitespace-nowrap" style={{ padding: "12px 24px", fontSize: "15px" }}>
+              🎯 <strong className="text-teal-400">50+</strong> Problem Solving
             </div>
           </motion.div>
 
@@ -297,8 +298,8 @@ export default function Hero() {
             className="absolute"
             style={{ top: "calc(50% + 20px)", left: "calc(50% - 320px)" }}
           >
-            <div className="rounded-xl border border-yellow-400/20 bg-[#0D1117]/80 backdrop-blur-sm text-white whitespace-nowrap" style={{ padding: "12px 24px", fontSize: "15px" }}>
-              💼 <strong className="text-orange-400">1</strong> Year Experience
+            <div className="rounded-xl border border-teal-400/20 bg-[#020C1B]/80 backdrop-blur-sm text-[#CCD6F6] whitespace-nowrap" style={{ padding: "12px 24px", fontSize: "15px" }}>
+              💼 <strong className="text-sky-400">1</strong> Year Experience
             </div>
           </motion.div>
 
@@ -309,8 +310,8 @@ export default function Hero() {
             className="absolute"
             style={{ top: "calc(50% + 110px)", left: "calc(50% + 80px)" }}
           >
-            <div className="rounded-xl border border-yellow-400/20 bg-[#0D1117]/80 backdrop-blur-sm text-white whitespace-nowrap" style={{ padding: "12px 24px", fontSize: "15px" }}>
-              ✅ <strong className="text-yellow-400">10+</strong> Finished Projects
+            <div className="rounded-xl border border-teal-400/20 bg-[#020C1B]/80 backdrop-blur-sm text-[#CCD6F6] whitespace-nowrap" style={{ padding: "12px 24px", fontSize: "15px" }}>
+              ✅ <strong className="text-teal-400">10+</strong> Finished Projects
             </div>
           </motion.div>
         </div>
