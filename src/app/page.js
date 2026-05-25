@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import About from "@/components/sections/About";
 import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
+import Services from "@/components/sections/Services";
 // import Skills from "@/components/sections/Skills";
 import Skills from "@/components/sections/Skills";
 import Technologies from "@/components/sections/Technologies";
@@ -14,6 +15,7 @@ export default function Home() {
       <About/>
       <Technologies/>
       <Skills/>
+      <Services/>
       <Footer/>
     </main>
   );
