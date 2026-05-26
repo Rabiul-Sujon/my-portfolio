@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import Qualification from "@/components/sections/Qualification";
@@ -18,6 +19,7 @@ export default function Home() {
       <Skills/>
       <Services/>
       <Qualification/>
+      <Contact/>
       <Footer/>
     </main>
   );
