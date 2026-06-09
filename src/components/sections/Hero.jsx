@@ -181,7 +181,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[#CCD6F6]/60 text-xl"
+            className="text-[#CCD6F6]/60 text-3xl"
           >
             Hey, I&apos;m
           </motion.p>

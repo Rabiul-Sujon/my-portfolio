@@ -35,7 +35,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen relative overflow-hidden bg-[#020C1B] flex flex-col items-center justify-center px-6 py-24"
+      className="min-h-screen relative overflow-hidden bg-[#020C1B] flex flex-col items-center justify-center px-6 py-10"
     >
       {/* Blue glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -68,7 +68,7 @@ export default function About() {
           style={{ width: "340px", height: "420px", position: "relative" }}
         >
           <Image
-            src="/professional-pic.jpeg"
+            src="/rabiul--sujon.png"
             alt="Rabiul Sujon"
             fill
             style={{
