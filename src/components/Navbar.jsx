@@ -97,25 +97,55 @@ export default function Navbar() {
             <AnimatePresence>
               {moreOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="absolute top-[110%] left-1/2 -translate-x-1/2 bg-[#020C1B]/95 backdrop-blur-md border border-sky-400/20 rounded-xl p-2 min-w-37.5 z-50"
-                >
-                  {moreLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      onClick={() => {
-                        setActive(link.name);
-                        setMoreOpen(false);
-                      }}
-                      className="block px-4 py-2.5 rounded-lg text-sm text-[#CCD6F6]/60 hover:text-sky-400 hover:bg-sky-400/5 transition-all duration-200"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </motion.div>
+  initial={{ opacity: 0, y: -10, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  exit={{ opacity: 0, y: -10, scale: 0.95 }}
+  transition={{ duration: 0.2 }}
+  style={{
+    position: "absolute",
+    top: "120%",
+    left: "50%",
+    transform: "translateX(-50%)",
+    background: "rgba(2,12,27,0.97)",
+    backdropFilter: "blur(12px)",
+    border: "1px solid rgba(100,255,218,0.15)",
+    borderRadius: "14px",
+    padding: "8px",
+    minWidth: "160px",
+    zIndex: 50,
+    boxShadow: "0 8px 32px rgba(100,255,218,0.08)",
+  }}
+>
+  {moreLinks.map((link) => (
+    <Link
+      key={link.name}
+      href={link.href}
+      onClick={() => {
+        setActive(link.name);
+        setMoreOpen(false);
+      }}
+      style={{
+        display: "block",
+        padding: "10px 16px",
+        borderRadius: "8px",
+        fontSize: "13px",
+        color: "rgba(204,214,246,0.7)",
+        textDecoration: "none",
+        transition: "all 0.2s",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.color = "#64FFDA";
+        e.currentTarget.style.background = "rgba(100,255,218,0.06)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.color = "rgba(204,214,246,0.7)";
+        e.currentTarget.style.background = "transparent";
+      }}
+    >
+      {link.name}
+    </Link>
+  ))}
+</motion.div>
               )}
             </AnimatePresence>
           </div>

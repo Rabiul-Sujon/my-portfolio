@@ -3,9 +3,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
-  MdOutlineDesktopWindows, MdOutlineApi,
-  MdOutlinePhoneAndroid,
+  MdOutlineDesktopWindows, MdOutlineApi,MdOutlineTravelExplore
+  
 } from "react-icons/md";
+import { FaWordpress } from "react-icons/fa";
 import { TbCode, TbStack2, TbVector } from "react-icons/tb";
 
 const services = [
@@ -46,27 +47,27 @@ const services = [
     ],
   },
   {
-    icon: <MdOutlinePhoneAndroid size={36} />,
-    title: "Mobile Hybrid App Development",
-    description: "Building cross-platform mobile apps that run on iOS and Android.",
-    points: [
-      { label: "React Native", detail: "Cross-platform development" },
-      { label: "UI/UX Design", detail: "Mobile-first interfaces" },
-      { label: "Push Notifications", detail: "Real-time engagement" },
-      { label: "Offline Support", detail: "Works without internet" },
-      { label: "App Store", detail: "Publishing & deployment" },
+   icon: <FaWordpress size={36} />,
+  title: "WordPress Website Management",
+  description: "Building and managing professional WordPress websites tailored to your business needs.",
+  points: [
+    { label: "Theme Customization", detail: "Unique and branded designs" },
+    { label: "Plugin Management", detail: "Best plugins for performance" },
+    { label: "Content Management", detail: "Easy to update content" },
+    { label: "Speed Optimization", detail: "Fast loading websites" },
+    { label: "Security", detail: "Keep your site safe" },
     ],
   },
   {
-    icon: <TbVector size={36} />,
-    title: "Prototype Development",
-    description: "Rapidly turning ideas into working prototypes for validation.",
-    points: [
-      { label: "Wireframing", detail: "Sketch the idea fast" },
-      { label: "MVP Build", detail: "Minimum viable product" },
-      { label: "User Testing", detail: "Validate with real users" },
-      { label: "Iteration", detail: "Fast feedback loop" },
-      { label: "Handoff", detail: "Ready for production" },
+    icon: <MdOutlineTravelExplore size={36} />,
+  title: "SEO Suggestions",
+  description: "Providing expert suggestions to help your website rank higher and reach the right audience.",
+  points: [
+    { label: "Keyword Research", detail: "Target the right audience" },
+    { label: "On-Page SEO", detail: "Optimize content & structure" },
+    { label: "Technical SEO", detail: "Speed, crawlability & indexing" },
+    { label: "Meta Tags", detail: "Title, description optimization" },
+    { label: "Performance", detail: "Core Web Vitals improvement" },
     ],
   },
   {

@@ -14,14 +14,14 @@ export default function Home() {
   return (
      <main className="min-h-screen px-4 md:px-16 lg:px-24" style={{ background: "#020C1B" }}>
       <Navbar/>
-      <Hero/>
-      <About/>
-      <Technologies/>
-      <Skills/>
-      <Services/>
-      <Qualification/>
-      <Projects/>
-      <Contact/>
+      <div id="home"><Hero/></div>
+      <div id="about"><About/></div>
+      <div id="technologies"><Technologies/></div>
+      <div id="skills"><Skills/></div>
+      <div id="services"><Services/></div>
+      <div id="qualification"><Qualification/></div>
+      <div id="projects"><Projects/></div>
+      <div id="contact"><Contact/></div>
       <Footer/>
     </main>
   );
