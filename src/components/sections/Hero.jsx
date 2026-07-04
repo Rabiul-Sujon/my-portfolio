@@ -235,7 +235,7 @@ export default function Hero() {
           >
             Say Hello ✈️
           </motion.a>
-
+          {/* <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
@@ -246,6 +246,7 @@ export default function Hero() {
             </div>
             Scroll Down
           </motion.div>
+          </div> */}
         </div>
 
         {/* Right — Photo + orbit + stats */}
@@ -315,6 +316,18 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
+      </div>
+       <div style={{ display: "flex", justifyContent: "center", width: "100%", paddingBottom: "80px",marginTop: "-98px" }}>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="flex items-center gap-2 text-[#CCD6F6]/30 text-sm"
+        >
+          <div className="w-5 h-8 rounded-full border border-[#CCD6F6]/20 flex items-start justify-center pt-1">
+            <div className="w-1 h-2 bg-[#CCD6F6]/40 rounded-full" />
+          </div>
+          Scroll Down
+        </motion.div>
       </div>
     </section>
   );
