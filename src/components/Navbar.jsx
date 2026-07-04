@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
+import Logo from "./Logo";
 
 const navLinks = [
   { name: "Home", href: "#home", icon: "🏠" },
@@ -50,11 +51,9 @@ export default function Navbar() {
         style={{ height: "72px", margin: "0 30px" }}
       >
         {/* Logo */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold text-[#CCD6F6] tracking-widest cursor-pointer z-50"
-        >
-          RS<span className="text-teal-400">.</span>
+        <motion.div>
+          <Logo />
+        
         </motion.div>
 
         {/* Desktop Nav Links */}
