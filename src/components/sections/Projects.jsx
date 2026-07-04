@@ -5,34 +5,36 @@ import { FaGithub } from "react-icons/fa";
 import { HiOutlineExternalLink } from "react-icons/hi";
 
 const projects = [
+  
   {
-    image: "/project-placeholder.png",
-    title: "Project One",
+    image: "/studynook.png",
+    title: "StudyNook",
     description:
-      'A full-stack web application built with modern technologies. Features include authentication, real-time updates, and a clean responsive UI.',
-    tags: ["Next.js", "React", "Node.js", "MongoDB"],
-    github: "https://github.com/Rabiul-Sujon/",
-    demo: "#",
+      'A full-stack library room booking platform where users can browse, book, and manage study rooms with JWT authentication and Firebase login.',
+    tags: ["React", "Express.js", "MongoDB", "Firebase", "JWT", "DaisyUI"],
+    github: "https://github.com/Rabiul-Sujon/studynook-client",
+    demo: "https://studynook-client-beryl.vercel.app/",
   },
   {
-    image: "/project-placeholder.png",
-    title: "Project Two",
+    image: "/momentumx.png",
+    title: "MomentumX",
     description:
-      'A full-stack web application built with modern technologies. Features include authentication, real-time updates, and a clean responsive UI.',
-    tags: ["Next.js", "Tailwind CSS", "Firebase", "Express"],
-    github: "https://github.com/Rabiul-Sujon/",
-    demo: "#",
+      'A full-stack Fitness & Gym Management Platform with class booking, Stripe payments, community forum, and role-based dashboards for User, Trainer, and Admin.',
+    tags: ["Next.js", "Tailwind CSS", "Express.js", "MongoDB", "Stripe", "Better Auth"],
+    github: "https://github.com/Rabiul-Sujon/momentumx-client",
+    demo: "https://momentumx-client.vercel.app/",
   },
   {
-    image: "/project-placeholder.png",
-    title: "Project Three",
+    image: "/borrowbooks.png",
+    title: "BorrowBooks",
     description:
-      'A full-stack web application built with modern technologies. Features include authentication, real-time updates, and a clean responsive UI.',
-    tags: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com/Rabiul-Sujon/",
-    demo: "#",
+      'A full-stack book marketplace built with Next.js and Better Auth where users can browse, borrow, and manage books with role-based access.',
+    tags: ["Next.js", "MongoDB", "Better Auth", "DaisyUI"],
+    github: "https://github.com/Rabiul-Sujon/borrowbooks.next",
+    demo: "https://borrowbooks-next.vercel.app/",
   },
 ];
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -72,18 +74,23 @@ export default function Projects() {
               }}
               whileHover={{ borderColor: "rgba(100,255,218,0.35)" }}
             >
-              {/* Image */}
-              <div style={{
-                width: "100%",
-                height: "180px",
-                background: "rgba(100,255,218,0.05)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                borderBottom: "1px solid rgba(100,255,218,0.08)",
-              }}>
-                <p style={{ color: "rgba(204,214,246,0.2)", fontSize: "13px" }}>Screenshot coming soon</p>
-              </div>
+          {/* Image */}
+          <div style={{
+           width: "100%",
+           height: "180px",
+           overflow: "hidden",
+           borderBottom: "1px solid rgba(100,255,218,0.08)",
+         }}>
+           <img
+           src={project.image}
+           alt={project.title}
+           style={{
+           width: "100%",
+           height: "100%",
+           objectFit: "cover",
+        }}
+         />
+         </div>
 
               {/* Content */}
               <div style={{ padding: "20px", display: "flex", flexDirection: "column", gap: "12px", flex: 1 }}>
