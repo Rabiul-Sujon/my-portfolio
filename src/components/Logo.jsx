@@ -7,7 +7,7 @@ export default function Logo() {
       alt="Rabiul Sujon Logo"
       width={150}
       height={40}
-      priority
+     
         style={{ marginTop: "8px" }}
     />
   );

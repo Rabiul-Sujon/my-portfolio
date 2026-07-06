@@ -151,7 +151,7 @@ export default function About() {
 
           {/* Download Resume */}
           <motion.a
-            href="/resume.pdf"
+            href="/Rabiul_MERN_Stack_Developer.pdf"
             download
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

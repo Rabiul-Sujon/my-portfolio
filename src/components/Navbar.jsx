@@ -48,7 +48,7 @@ export default function Navbar() {
             ? "bg-[#020C1B]/90 backdrop-blur-md border-b-2 border-teal-400/10"
             : "bg-[#020C1B]/60 backdrop-blur-md border-b-2 border-[#CCD6F6]/5"
         }`}
-        style={{ height: "72px", margin: "0 30px" }}
+        style={{ height: "72px", margin: "0 16px" }}
       >
         {/* Logo */}
         <motion.div>
@@ -153,13 +153,7 @@ export default function Navbar() {
 
         {/* Right — settings + hamburger */}
         <div className="flex items-center gap-3">
-          <motion.button
-            whileHover={{ scale: 1.1, rotate: 30 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:flex w-10 h-10 rounded-full border border-teal-400/30 bg-teal-400/5 backdrop-blur-md items-center justify-center text-lg"
-          >
-            ⚙️
-          </motion.button>
+          
 
           {/* Hamburger */}
           <button
