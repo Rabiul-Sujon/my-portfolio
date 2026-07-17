@@ -22,3 +22,269 @@ body {
   color: #CCD6F6;
   overflow-x: hidden;
 }
+
+/* ============================================================
+   RESPONSIVE OVERRIDES - SECTION WISE
+   ============================================================ */
+
+/* ============================================================
+   1. NAVBAR
+   ============================================================ */
+
+/* Fix mobile menu going under navbar */
+.fixed.top-0.right-0.h-full.w-72 {
+  z-index: 9999 !important;
+  isolation: isolate !important;
+}
+
+/* Keep navbar below mobile menu */
+nav[class*="fixed top-0"] {
+  z-index: 40 !important;
+}
+
+/* Tablet - Navbar height & margin */
+@media (max-width: 1024px) {
+  nav[class*="fixed top-0"] {
+    height: 60px !important;
+    margin: 0 8px !important;
+  }
+}
+
+/* Mobile - Navbar height & margin */
+@media (max-width: 768px) {
+  nav[class*="fixed top-0"] {
+    height: 54px !important;
+    margin: 0 4px !important;
+  }
+
+  /* Mobile menu width */
+  .fixed.top-0.right-0.h-full.w-72 {
+    width: 80% !important;
+  }
+}
+
+/* Very small phones - Navbar */
+@media (max-width: 480px) {
+  nav[class*="fixed top-0"] {
+    height: 48px !important;
+  }
+}
+
+/* ============================================================
+   2. HERO SECTION
+   ============================================================ */
+
+/* ---------- Tablet (max-width: 1024px) ---------- */
+@media (max-width: 1024px) {
+  /* Hero - force column stacking */
+  #home .flex.items-center.min-h-screen.pt-20 {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-top: 10px !important;
+  }
+
+  /* Social icons - horizontal row at top */
+  #home .flex-col.gap-5.shrink-0 {
+    flex-direction: row !important;
+    padding-top: 20px !important;
+    padding-left: 0 !important;
+    padding-bottom: 20px !important;
+    gap: 12px !important;
+  }
+
+  /* Left content - center text */
+  #home .flex-1.flex.flex-col.gap-8.pr-10.pt-24 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 10px !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* Heading smaller */
+  #home h1.text-6xl {
+    font-size: 2.5rem !important;
+  }
+
+  /* Typewriter text smaller */
+  #home .text-2xl {
+    font-size: 1.25rem !important;
+  }
+
+  /* Image container - remove negative margin, shrink */
+  #home .flex-1.flex.justify-center.items-center.relative {
+    height: 350px !important;
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+  }
+
+  /* Profile image & orbit rings */
+  #home .w-64.h-64 {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  #home .w-72.h-72 {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  #home .w-80.h-80 {
+    width: 220px !important;
+    height: 220px !important;
+  }
+}
+
+/* ---------- Mobile (max-width: 768px) ---------- */
+@media (max-width: 768px) {
+  /* Text sizes */
+  #home h1.text-6xl {
+    font-size: 2rem !important;
+  }
+  #home .text-3xl {
+    font-size: 1.5rem !important;
+  }
+  #home .text-2xl {
+    font-size: 1.1rem !important;
+  }
+
+  /* Left content padding */
+  #home .flex-1.flex.flex-col.gap-8.pr-10.pt-24 {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    gap: 10px !important;
+  }
+  /* Reduce gap after Say Hello button (mobile) */
+@media (max-width: 768px) {
+  #home .flex-1.flex.flex-col.gap-8.pr-10.pt-24 {
+    margin-bottom: -260px !important;
+  }
+}
+
+  /* Social icons - push lower */
+  #home .flex-col.gap-5.shrink-0 {
+    padding-top: 30px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* Photo container - move higher */
+  #home .flex-1.flex.justify-center.items-center.relative {
+    margin-top: -80px !important;
+    height: 250px !important;
+  }
+
+
+  /* Profile image & orbit rings - smaller */
+  #home .w-64.h-64 {
+    width: 110px !important;
+    height: 110px !important;
+  }
+  #home .w-72.h-72 {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  #home .w-80.h-80 {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  /* Social icons smaller */
+  #home .flex-col.gap-5.shrink-0 a {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 12px !important;
+  }
+
+  /* "Say Hello" button smaller */
+  #home a[href="#contact"] {
+    font-size: 14px !important;
+    padding: 6px 20px !important;
+  }
+
+  /* ---- 3 Badges: clear row below photo ---- */
+  /* Badge 1 - "50+ Problem Solving" */
+  #home .absolute[style*="top: calc(50% - 140px)"] {
+  top: 50% !important;
+  right: 5% !important;
+  left: auto !important;
+  bottom: auto !important;
+  font-size: 9px !important;
+  padding: 3px 8px !important;
+  white-space: nowrap !important;
+}
+
+  /* Badge 2 - "1 Year Experience" */
+  #home .absolute[style*="top: calc(50% + 20px)"] {
+    top: auto !important;
+    bottom: 5px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Badge 3 - "10+ Finished Projects" */
+  #home .absolute[style*="top: calc(50% + 110px)"] {
+    top: auto !important;
+    bottom: 5px !important;
+    right: 5% !important;
+    left: auto !important;
+    transform: none !important;
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ---------- Very small phones (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+  #home h1.text-6xl {
+    font-size: 1.6rem !important;
+  }
+  #home .text-3xl {
+    font-size: 1.2rem !important;
+  }
+  #home .text-2xl {
+    font-size: 0.95rem !important;
+  }
+
+  #home .flex-col.gap-5.shrink-0 {
+    padding-top: 20px !important;
+  }
+
+  #home .flex-1.flex.justify-center.items-center.relative {
+    margin-top: -20px !important;
+    height: 200px !important;
+  }
+
+  #home .w-64.h-64 {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  #home .w-72.h-72 {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  #home .w-80.h-80 {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  #home .flex-col.gap-5.shrink-0 a {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 10px !important;
+  }
+
+  /* Badges even smaller */
+  #home .absolute[style*="top: calc(50% - 140px)"],
+  #home .absolute[style*="top: calc(50% + 20px)"],
+  #home .absolute[style*="top: calc(50% + 110px)"] {
+    font-size: 7px !important;
+    padding: 2px 6px !important;
+    bottom: 2px !important;
+  }
+}
+
+/* ============================================================
+   3. NEXT SECTION - (Coming next, after you send the file)
+   ============================================================ */
