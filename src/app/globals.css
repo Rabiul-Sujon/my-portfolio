@@ -200,38 +200,37 @@ nav[class*="fixed top-0"] {
   }
 
   /* ---- 3 Badges: clear row below photo ---- */
-  /* Badge 1 - "50+ Problem Solving" */
+ /* Position badges around photo on mobile */
+@media (max-width: 768px) {
+  /* Badge 1 - Top Right */
   #home .absolute[style*="top: calc(50% - 140px)"] {
-  top: 50% !important;
-  right: 5% !important;
-  left: auto !important;
-  bottom: auto !important;
-  font-size: 9px !important;
-  padding: 3px 8px !important;
-  white-space: nowrap !important;
-}
-
-  /* Badge 2 - "1 Year Experience" */
-  #home .absolute[style*="top: calc(50% + 20px)"] {
-    top: auto !important;
-    bottom: 5px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    font-size: 9px !important;
-    padding: 3px 8px !important;
-    white-space: nowrap !important;
+    top: 0% !important;
+    right: 0% !important;
+    left: auto !important;
+    bottom: auto !important;
+    font-size: 7px !important;
+    padding: 2px 6px !important;
   }
 
-  /* Badge 3 - "10+ Finished Projects" */
+  /* Badge 2 - Left Middle */
+  #home .absolute[style*="top: calc(50% + 20px)"] {
+    top: 50% !important;
+    left: 0% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    font-size: 7px !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Badge 3 - Bottom Right */
   #home .absolute[style*="top: calc(50% + 110px)"] {
-    top: auto !important;
-    bottom: 5px !important;
-    right: 5% !important;
+    bottom: 0% !important;
+    right: 0% !important;
     left: auto !important;
-    transform: none !important;
-    font-size: 9px !important;
-    padding: 3px 8px !important;
-    white-space: nowrap !important;
+    top: auto !important;
+    font-size: 7px !important;
+    padding: 2px 6px !important;
   }
 }
 
@@ -287,4 +286,4 @@ nav[class*="fixed top-0"] {
 
 /* ============================================================
    3. NEXT SECTION - (Coming next, after you send the file)
-   ============================================================ */
+   ============================================================ */}

@@ -5,7 +5,7 @@ import { createSparkle } from "@/utils/sparkle";
 import { FaLinkedinIn, FaGithub, FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 
-const roles = ["Web Developer", "Frontend Developer", "Backend Developer", "Problem Solver"];
+const roles = ["Full-Stack Web Developer", "Frontend Developer", "Backend Developer", "Problem Solver"];
 
 const dotPositions = [
   { top: "10%", left: "10%" },
