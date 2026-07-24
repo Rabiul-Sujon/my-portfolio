@@ -15,275 +15,526 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: #020C1B;
   color: #CCD6F6;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ============================================================
-   RESPONSIVE OVERRIDES - SECTION WISE
+   RESPONSIVE DESIGN OVERRIDES (MOBILE & TABLET)
    ============================================================ */
 
-/* ============================================================
-   1. NAVBAR
-   ============================================================ */
+/* ------------------------------------------------------------
+   1. NAVBAR & MOBILE DRAWER
+   ------------------------------------------------------------ */
 
-/* Fix mobile menu going under navbar */
+/* Fix mobile drawer layering */
 .fixed.top-0.right-0.h-full.w-72 {
   z-index: 9999 !important;
   isolation: isolate !important;
 }
 
-/* Keep navbar below mobile menu */
+/* Keep main navbar behind drawer but above page content */
 nav[class*="fixed top-0"] {
-  z-index: 40 !important;
+  z-index: 50 !important;
 }
 
-/* Tablet - Navbar height & margin */
-@media (max-width: 1024px) {
-  nav[class*="fixed top-0"] {
-    height: 60px !important;
-    margin: 0 8px !important;
-  }
-}
-
-/* Mobile - Navbar height & margin */
 @media (max-width: 768px) {
   nav[class*="fixed top-0"] {
-    height: 54px !important;
-    margin: 0 4px !important;
+    margin: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    height: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
   }
 
-  /* Mobile menu width */
   .fixed.top-0.right-0.h-full.w-72 {
-    width: 80% !important;
+    width: 82% !important;
+    max-width: 320px !important;
   }
 }
 
-/* Very small phones - Navbar */
-@media (max-width: 480px) {
-  nav[class*="fixed top-0"] {
-    height: 48px !important;
-  }
-}
+/* ------------------------------------------------------------
+   2. HERO SECTION (#home)
+   ------------------------------------------------------------ */
 
-/* ============================================================
-   2. HERO SECTION
-   ============================================================ */
-
-/* ---------- Tablet (max-width: 1024px) ---------- */
 @media (max-width: 1024px) {
-  /* Hero - force column stacking */
+  #home {
+    padding-top: 70px !important;
+  }
+
+  /* Force vertical layout: content on top, photo below */
   #home .flex.items-center.min-h-screen.pt-20 {
     flex-direction: column !important;
-    align-items: center !important;
-    padding-top: 10px !important;
+    justify-content: center !important;
+    min-height: auto !important;
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+    gap: 32px !important;
   }
 
-  /* Social icons - horizontal row at top */
+  /* Social icons horizontal flex row */
   #home .flex-col.gap-5.shrink-0 {
     flex-direction: row !important;
-    padding-top: 20px !important;
     padding-left: 0 !important;
-    padding-bottom: 20px !important;
-    gap: 12px !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    gap: 16px !important;
+    order: 1;
   }
 
-  /* Left content - center text */
+  /* Left text content centered */
   #home .flex-1.flex.flex-col.gap-8.pr-10.pt-24 {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    padding-top: 10px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
     text-align: center !important;
     align-items: center !important;
+    order: 2;
+    width: 100% !important;
+    gap: 16px !important;
   }
 
-  /* Heading smaller */
   #home h1.text-6xl {
-    font-size: 2.5rem !important;
+    font-size: 2.4rem !important;
+    justify-content: center !important;
   }
 
-  /* Typewriter text smaller */
-  #home .text-2xl {
-    font-size: 1.25rem !important;
-  }
-
-  /* Image container - remove negative margin, shrink */
-  #home .flex-1.flex.justify-center.items-center.relative {
-    height: 350px !important;
-    margin-left: 0 !important;
-    margin-top: 10px !important;
-  }
-
-  /* Profile image & orbit rings */
-  #home .w-64.h-64 {
-    width: 160px !important;
-    height: 160px !important;
-  }
-  #home .w-72.h-72 {
-    width: 200px !important;
-    height: 200px !important;
-  }
-  #home .w-80.h-80 {
-    width: 220px !important;
-    height: 220px !important;
-  }
-}
-
-/* ---------- Mobile (max-width: 768px) ---------- */
-@media (max-width: 768px) {
-  /* Text sizes */
-  #home h1.text-6xl {
-    font-size: 2rem !important;
-  }
   #home .text-3xl {
     font-size: 1.5rem !important;
   }
+
   #home .text-2xl {
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
+    justify-content: center !important;
   }
 
-  /* Left content padding */
-  #home .flex-1.flex.flex-col.gap-8.pr-10.pt-24 {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    gap: 10px !important;
-  }
-  /* Reduce gap after Say Hello button (mobile) */
-@media (max-width: 768px) {
-  #home .flex-1.flex.flex-col.gap-8.pr-10.pt-24 {
-    margin-bottom: -260px !important;
-  }
-}
-
-  /* Social icons - push lower */
-  #home .flex-col.gap-5.shrink-0 {
-    padding-top: 30px !important;
-    padding-bottom: 10px !important;
-  }
-
-  /* Photo container - move higher */
+  /* Photo container centered */
   #home .flex-1.flex.justify-center.items-center.relative {
-    margin-top: -80px !important;
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+    height: 320px !important;
+    width: 100% !important;
+    order: 3;
+  }
+
+  /* Profile image & orbit scaling */
+  #home .w-64.h-64 {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  #home .w-72.h-72 {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  #home .w-80.h-80 {
+    width: 250px !important;
     height: 250px !important;
   }
 
-
-  /* Profile image & orbit rings - smaller */
-  #home .w-64.h-64 {
-    width: 110px !important;
-    height: 110px !important;
-  }
-  #home .w-72.h-72 {
-    width: 140px !important;
-    height: 140px !important;
-  }
-  #home .w-80.h-80 {
-    width: 160px !important;
-    height: 160px !important;
-  }
-
-  /* Social icons smaller */
-  #home .flex-col.gap-5.shrink-0 a {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 12px !important;
-  }
-
-  /* "Say Hello" button smaller */
-  #home a[href="#contact"] {
-    font-size: 14px !important;
-    padding: 6px 20px !important;
-  }
-
-  /* ---- 3 Badges: clear row below photo ---- */
- /* Position badges around photo on mobile */
-@media (max-width: 768px) {
-  /* Badge 1 - Top Right */
+  /* Stat Badges position around photo without overflow */
   #home .absolute[style*="top: calc(50% - 140px)"] {
-    top: 0% !important;
-    right: 0% !important;
+    top: 5px !important;
     left: auto !important;
-    bottom: auto !important;
-    font-size: 7px !important;
-    padding: 2px 6px !important;
+    right: 8% !important;
+    font-size: 13px !important;
   }
 
-  /* Badge 2 - Left Middle */
   #home .absolute[style*="top: calc(50% + 20px)"] {
     top: 50% !important;
-    left: 0% !important;
-    right: auto !important;
-    bottom: auto !important;
+    left: 4% !important;
     transform: translateY(-50%) !important;
-    font-size: 7px !important;
-    padding: 2px 6px !important;
+    font-size: 13px !important;
   }
 
-  /* Badge 3 - Bottom Right */
   #home .absolute[style*="top: calc(50% + 110px)"] {
-    bottom: 0% !important;
-    right: 0% !important;
-    left: auto !important;
     top: auto !important;
-    font-size: 7px !important;
-    padding: 2px 6px !important;
+    bottom: 5px !important;
+    left: auto !important;
+    right: 8% !important;
+    font-size: 13px !important;
   }
 }
 
-/* ---------- Very small phones (max-width: 480px) ---------- */
+@media (max-width: 768px) {
+  #home h1.text-6xl {
+    font-size: 2rem !important;
+  }
+
+  #home .text-3xl {
+    font-size: 1.25rem !important;
+  }
+
+  #home .text-2xl {
+    font-size: 1.05rem !important;
+  }
+
+  #home .flex-1.flex.justify-center.items-center.relative {
+    height: 270px !important;
+  }
+
+  #home .w-64.h-64 {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  #home .w-72.h-72 {
+    width: 175px !important;
+    height: 175px !important;
+  }
+
+  #home .w-80.h-80 {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* Compact floating stat cards for mobile screens */
+  #home .absolute[style*="top: calc(50% - 140px)"],
+  #home .absolute[style*="top: calc(50% + 20px)"],
+  #home .absolute[style*="top: calc(50% + 110px)"] {
+    font-size: 11px !important;
+  }
+
+  #home .absolute[style*="top: calc(50% - 140px)"] div,
+  #home .absolute[style*="top: calc(50% + 20px)"] div,
+  #home .absolute[style*="top: calc(50% + 110px)"] div {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+
+  #home .absolute[style*="top: calc(50% - 140px)"] {
+    top: 0px !important;
+    right: 4% !important;
+  }
+
+  #home .absolute[style*="top: calc(50% + 20px)"] {
+    top: 50% !important;
+    left: 2% !important;
+  }
+
+  #home .absolute[style*="top: calc(50% + 110px)"] {
+    bottom: 0px !important;
+    right: 4% !important;
+  }
+}
+
 @media (max-width: 480px) {
   #home h1.text-6xl {
-    font-size: 1.6rem !important;
+    font-size: 1.65rem !important;
   }
+
   #home .text-3xl {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
   }
+
   #home .text-2xl {
     font-size: 0.95rem !important;
   }
 
-  #home .flex-col.gap-5.shrink-0 {
-    padding-top: 20px !important;
-  }
-
   #home .flex-1.flex.justify-center.items-center.relative {
-    margin-top: -20px !important;
-    height: 200px !important;
+    height: 240px !important;
   }
 
   #home .w-64.h-64 {
-    width: 90px !important;
-    height: 90px !important;
-  }
-  #home .w-72.h-72 {
-    width: 120px !important;
-    height: 120px !important;
-  }
-  #home .w-80.h-80 {
-    width: 140px !important;
-    height: 140px !important;
+    width: 115px !important;
+    height: 115px !important;
   }
 
-  #home .flex-col.gap-5.shrink-0 a {
-    width: 28px !important;
-    height: 28px !important;
+  #home .w-72.h-72 {
+    width: 145px !important;
+    height: 145px !important;
+  }
+
+  #home .w-80.h-80 {
+    width: 165px !important;
+    height: 165px !important;
+  }
+
+  #home .absolute[style*="top: calc(50% - 140px)"] div,
+  #home .absolute[style*="top: calc(50% + 20px)"] div,
+  #home .absolute[style*="top: calc(50% + 110px)"] div {
+    padding: 4px 8px !important;
     font-size: 10px !important;
   }
 
-  /* Badges even smaller */
-  #home .absolute[style*="top: calc(50% - 140px)"],
-  #home .absolute[style*="top: calc(50% + 20px)"],
+  #home .absolute[style*="top: calc(50% - 140px)"] {
+    top: -5px !important;
+    right: 2% !important;
+  }
+
+  #home .absolute[style*="top: calc(50% + 20px)"] {
+    top: 50% !important;
+    left: 0px !important;
+  }
+
   #home .absolute[style*="top: calc(50% + 110px)"] {
-    font-size: 7px !important;
-    padding: 2px 6px !important;
-    bottom: 2px !important;
+    bottom: -5px !important;
+    right: 2% !important;
   }
 }
 
-/* ============================================================
-   3. NEXT SECTION - (Coming next, after you send the file)
-   ============================================================ */}
+/* ------------------------------------------------------------
+   3. ABOUT SECTION (#about)
+   ------------------------------------------------------------ */
+
+@media (max-width: 1024px) {
+  #about .max-w-6xl {
+    gap: 32px !important;
+  }
+
+  #about .relative.flex-shrink-0 {
+    width: 280px !important;
+    height: 350px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    min-height: auto !important;
+  }
+
+  #about .max-w-6xl {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 28px !important;
+  }
+
+  #about .relative.flex-shrink-0 {
+    width: 220px !important;
+    height: 270px !important;
+  }
+
+  #about .grid-cols-3 {
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  #about .grid-cols-3 > div {
+    padding: 14px 8px !important;
+  }
+
+  #about a[download] {
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #about .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  #about .grid-cols-3 > div {
+    padding: 12px 4px !important;
+  }
+
+  #about .grid-cols-3 span:nth-child(2) {
+    font-size: 12px !important;
+  }
+
+  #about .grid-cols-3 span:nth-child(3) {
+    font-size: 10px !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   4. TECHNOLOGIES SECTION (#technologies)
+   ------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  #technologies {
+    padding-top: 50px !important;
+    padding-bottom: 60px !important;
+    min-height: auto !important;
+  }
+
+  #technologies > div[style*="display: flex"] {
+    gap: 20px !important;
+    margin-bottom: 30px !important;
+    padding: 0 16px !important;
+  }
+
+  #technologies div[style*="width: 76px"] {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  #technologies img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   5. SKILLS SECTION (#skills)
+   ------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  #skills {
+    padding-bottom: 60px !important;
+  }
+
+  #skills div[style*="padding: 0 32px"] {
+    padding: 0 16px !important;
+  }
+
+  #skills div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  #skills div[style*="borderRadius: 16px"] {
+    padding: 20px 16px !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   6. SERVICES SECTION (#services)
+   ------------------------------------------------------------ */
+
+@media (max-width: 1024px) {
+  #services div[style*="gridTemplateColumns"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #services div[style*="padding: 0 32px"] {
+    padding: 0 16px !important;
+  }
+
+  #services div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  #services div[style*="maxWidth: 480px"] {
+    padding: 28px 20px !important;
+    max-width: 92vw !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   7. QUALIFICATION SECTION (#qualification)
+   ------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  #qualification {
+    padding: 30px 0 60px !important;
+  }
+
+  #qualification div[style*="padding: 0 32px"] {
+    padding: 0 16px !important;
+  }
+
+  #qualification div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr 20px 1fr !important;
+    margin-bottom: 24px !important;
+  }
+
+  #qualification h4 {
+    font-size: 12px !important;
+  }
+
+  #qualification p {
+    font-size: 11px !important;
+  }
+
+  #qualification div[style*="paddingRight: 24px"] {
+    padding-right: 8px !important;
+  }
+
+  #qualification div[style*="paddingLeft: 24px"] {
+    padding-left: 8px !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   8. PROJECTS SECTION (#projects)
+   ------------------------------------------------------------ */
+
+@media (max-width: 1024px) {
+  #projects div[style*="gridTemplateColumns"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #projects div[style*="padding: 0 32px"] {
+    padding: 0 16px !important;
+  }
+
+  #projects div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   9. CONTACT SECTION (#contact)
+   ------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+  #contact div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  #contact button[type="submit"] {
+    align-self: center !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #contact div[style*="padding: 0 32px"] {
+    padding: 0 16px !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   10. FOOTER
+   ------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  footer div[style*="padding: 0 32px"] {
+    padding: 0 16px !important;
+  }
+
+  footer div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    text-align: center !important;
+  }
+
+  footer div[style*="marginLeft: 80px"],
+  footer div[style*="marginLeft: 60px"] {
+    margin-left: 0 !important;
+  }
+
+  footer ul {
+    align-items: center !important;
+  }
+
+  footer div[style*="display: flex; gap: 18px"] {
+    justify-content: center !important;
+  }
+}
