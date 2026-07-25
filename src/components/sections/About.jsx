@@ -144,9 +144,12 @@ export default function About() {
             Proficient in React.js, Next.js, Node.js, and MongoDB, I build
             scalable, high-performance web applications. Skilled in RESTful
             APIs, Express.js, and modern frontend tools, I craft clean UI
-            with Tailwind CSS and ShadCN. With an eye for design and a
-            passion for performance, I deliver real-time systems and impactful
-            digital experiences — from concept to deployment.
+            with Tailwind CSS and ShadCN. Currently working as a Website
+            Management Intern at Canyon Entertainment Group (Canada), building
+            a full MERN stack website for their flagship artist group. With an
+            eye for design and a passion for performance, I deliver real-time
+            systems and impactful digital experiences — from concept to
+            deployment.
           </motion.p>
 
           {/* Download Resume */}

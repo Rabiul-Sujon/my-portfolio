@@ -36,6 +36,12 @@ const educationData = [
 
 const experienceData = [
   {
+    title: "Website Management Intern",
+    institution: "Canyon Entertainment Group (Canada) - Remote",
+    date: "2026 - Present",
+    side: "left",
+  },
+  {
     title: "Freelance Developer",
     institution: "Self Employed",
     date: "2023 - Present",
