@@ -16,6 +16,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -23,27 +24,27 @@ body {
   color: #CCD6F6;
   overflow-x: hidden;
   width: 100%;
+  max-width: 100vw;
 }
 
-/* ============================================================
-   RESPONSIVE DESIGN OVERRIDES (MOBILE & TABLET)
-   ============================================================ */
-
-/* ------------------------------------------------------------
-   1. NAVBAR & MOBILE DRAWER
-   ------------------------------------------------------------ */
-
-/* Fix mobile drawer layering */
+/* Base layering for navbar elements */
 .fixed.top-0.right-0.h-full.w-72 {
   z-index: 9999 !important;
   isolation: isolate !important;
 }
 
-/* Keep main navbar behind drawer but above page content */
 nav[class*="fixed top-0"] {
   z-index: 50 !important;
 }
 
+/* ============================================================
+   RESPONSIVE OVERRIDES (TABLET & MOBILE ONLY: <= 1024px)
+   Screens > 1024px (Laptop/Desktop) remain 100% UNTOUCHED
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. NAVBAR & MOBILE DRAWER
+   ------------------------------------------------------------ */
 @media (max-width: 768px) {
   nav[class*="fixed top-0"] {
     margin: 0 !important;
@@ -64,13 +65,11 @@ nav[class*="fixed top-0"] {
 /* ------------------------------------------------------------
    2. HERO SECTION (#home)
    ------------------------------------------------------------ */
-
 @media (max-width: 1024px) {
   #home {
-    padding-top: 70px !important;
+    padding-top: 60px !important;
   }
 
-  /* Force vertical layout: content on top, photo below */
   #home .flex.items-center.min-h-screen.pt-20 {
     flex-direction: column !important;
     justify-content: center !important;
@@ -80,7 +79,6 @@ nav[class*="fixed top-0"] {
     gap: 32px !important;
   }
 
-  /* Social icons horizontal flex row */
   #home .flex-col.gap-5.shrink-0 {
     flex-direction: row !important;
     padding-left: 0 !important;
@@ -90,7 +88,6 @@ nav[class*="fixed top-0"] {
     order: 1;
   }
 
-  /* Left text content centered */
   #home .flex-1.flex.flex-col.gap-8.pr-10.pt-24 {
     padding-left: 16px !important;
     padding-right: 16px !important;
@@ -109,15 +106,14 @@ nav[class*="fixed top-0"] {
   }
 
   #home .text-3xl {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
   }
 
   #home .text-2xl {
-    font-size: 1.2rem !important;
+    font-size: 1.15rem !important;
     justify-content: center !important;
   }
 
-  /* Photo container centered */
   #home .flex-1.flex.justify-center.items-center.relative {
     margin-left: 0 !important;
     margin-top: 10px !important;
@@ -126,7 +122,6 @@ nav[class*="fixed top-0"] {
     order: 3;
   }
 
-  /* Profile image & orbit scaling */
   #home .w-64.h-64 {
     width: 180px !important;
     height: 180px !important;
@@ -142,22 +137,21 @@ nav[class*="fixed top-0"] {
     height: 250px !important;
   }
 
-  /* Stat Badges position around photo without overflow */
-  #home .absolute[style*="top: calc(50% - 140px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(3) {
     top: 5px !important;
     left: auto !important;
     right: 8% !important;
     font-size: 13px !important;
   }
 
-  #home .absolute[style*="top: calc(50% + 20px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(4) {
     top: 50% !important;
     left: 4% !important;
     transform: translateY(-50%) !important;
     font-size: 13px !important;
   }
 
-  #home .absolute[style*="top: calc(50% + 110px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(5) {
     top: auto !important;
     bottom: 5px !important;
     left: auto !important;
@@ -168,15 +162,15 @@ nav[class*="fixed top-0"] {
 
 @media (max-width: 768px) {
   #home h1.text-6xl {
-    font-size: 2rem !important;
+    font-size: 1.9rem !important;
   }
 
   #home .text-3xl {
-    font-size: 1.25rem !important;
+    font-size: 1.2rem !important;
   }
 
   #home .text-2xl {
-    font-size: 1.05rem !important;
+    font-size: 1rem !important;
   }
 
   #home .flex-1.flex.justify-center.items-center.relative {
@@ -198,31 +192,22 @@ nav[class*="fixed top-0"] {
     height: 200px !important;
   }
 
-  /* Compact floating stat cards for mobile screens */
-  #home .absolute[style*="top: calc(50% - 140px)"],
-  #home .absolute[style*="top: calc(50% + 20px)"],
-  #home .absolute[style*="top: calc(50% + 110px)"] {
-    font-size: 11px !important;
-  }
-
-  #home .absolute[style*="top: calc(50% - 140px)"] div,
-  #home .absolute[style*="top: calc(50% + 20px)"] div,
-  #home .absolute[style*="top: calc(50% + 110px)"] div {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute div {
     padding: 6px 12px !important;
     font-size: 12px !important;
   }
 
-  #home .absolute[style*="top: calc(50% - 140px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(3) {
     top: 0px !important;
     right: 4% !important;
   }
 
-  #home .absolute[style*="top: calc(50% + 20px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(4) {
     top: 50% !important;
     left: 2% !important;
   }
 
-  #home .absolute[style*="top: calc(50% + 110px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(5) {
     bottom: 0px !important;
     right: 4% !important;
   }
@@ -231,14 +216,6 @@ nav[class*="fixed top-0"] {
 @media (max-width: 480px) {
   #home h1.text-6xl {
     font-size: 1.65rem !important;
-  }
-
-  #home .text-3xl {
-    font-size: 1.1rem !important;
-  }
-
-  #home .text-2xl {
-    font-size: 0.95rem !important;
   }
 
   #home .flex-1.flex.justify-center.items-center.relative {
@@ -260,24 +237,22 @@ nav[class*="fixed top-0"] {
     height: 165px !important;
   }
 
-  #home .absolute[style*="top: calc(50% - 140px)"] div,
-  #home .absolute[style*="top: calc(50% + 20px)"] div,
-  #home .absolute[style*="top: calc(50% + 110px)"] div {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute div {
     padding: 4px 8px !important;
     font-size: 10px !important;
   }
 
-  #home .absolute[style*="top: calc(50% - 140px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(3) {
     top: -5px !important;
     right: 2% !important;
   }
 
-  #home .absolute[style*="top: calc(50% + 20px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(4) {
     top: 50% !important;
     left: 0px !important;
   }
 
-  #home .absolute[style*="top: calc(50% + 110px)"] {
+  #home .flex-1.flex.justify-center.items-center.relative > div.absolute:nth-of-type(5) {
     bottom: -5px !important;
     right: 2% !important;
   }
@@ -286,7 +261,6 @@ nav[class*="fixed top-0"] {
 /* ------------------------------------------------------------
    3. ABOUT SECTION (#about)
    ------------------------------------------------------------ */
-
 @media (max-width: 1024px) {
   #about .max-w-6xl {
     gap: 32px !important;
@@ -300,8 +274,8 @@ nav[class*="fixed top-0"] {
 
 @media (max-width: 768px) {
   #about {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
     min-height: auto !important;
   }
 
@@ -353,21 +327,21 @@ nav[class*="fixed top-0"] {
 /* ------------------------------------------------------------
    4. TECHNOLOGIES SECTION (#technologies)
    ------------------------------------------------------------ */
-
 @media (max-width: 768px) {
   #technologies {
-    padding-top: 50px !important;
-    padding-bottom: 60px !important;
+    padding-top: 40px !important;
+    padding-bottom: 50px !important;
     min-height: auto !important;
   }
 
-  #technologies > div[style*="display: flex"] {
+  #technologies > div[style*="display"] {
     gap: 20px !important;
     margin-bottom: 30px !important;
-    padding: 0 16px !important;
+    padding: 0 10px !important;
   }
 
-  #technologies div[style*="width: 76px"] {
+  #technologies div[style*="width: 76px"],
+  #technologies div[style*="width:76px"] {
     width: 58px !important;
     height: 58px !important;
   }
@@ -381,118 +355,170 @@ nav[class*="fixed top-0"] {
 /* ------------------------------------------------------------
    5. SKILLS SECTION (#skills)
    ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  #skills section > div {
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+}
 
 @media (max-width: 768px) {
-  #skills {
-    padding-bottom: 60px !important;
+  #skills section {
+    padding: 40px 0 !important;
   }
 
-  #skills div[style*="padding: 0 32px"] {
-    padding: 0 16px !important;
-  }
-
-  #skills div[style*="gridTemplateColumns"] {
+  #skills section > div > div:nth-child(2) {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
 
-  #skills div[style*="borderRadius: 16px"] {
-    padding: 20px 16px !important;
+  #skills section > div > div:nth-child(2) > div {
+    padding: 24px 16px !important;
   }
 }
 
 /* ------------------------------------------------------------
    6. SERVICES SECTION (#services)
    ------------------------------------------------------------ */
-
 @media (max-width: 1024px) {
-  #services div[style*="gridTemplateColumns"] {
+  #services section > div {
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+
+  #services section > div > div:nth-child(2) {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 20px !important;
   }
 }
 
 @media (max-width: 640px) {
-  #services div[style*="padding: 0 32px"] {
-    padding: 0 16px !important;
+  #services section {
+    padding: 30px 0 60px !important;
   }
 
-  #services div[style*="gridTemplateColumns"] {
+  #services section > div {
+    padding: 0 10px !important;
+  }
+
+  #services section > div > div:nth-child(2) {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
 
-  #services div[style*="maxWidth: 480px"] {
-    padding: 28px 20px !important;
+  #services div[style*="max-width: 480px"],
+  #services div[style*="max-width:480px"],
+  #services div[style*="maxWidth: 480px"],
+  #services div[style*="maxWidth:480px"] {
     max-width: 92vw !important;
     max-height: 85vh !important;
     overflow-y: auto !important;
+    padding: 24px 18px !important;
   }
 }
 
 /* ------------------------------------------------------------
    7. QUALIFICATION SECTION (#qualification)
    ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  #qualification section > div {
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+}
 
-@media (max-width: 640px) {
-  #qualification {
+@media (max-width: 768px) {
+  #qualification section {
     padding: 30px 0 60px !important;
   }
 
-  #qualification div[style*="padding: 0 32px"] {
-    padding: 0 16px !important;
-  }
-
-  #qualification div[style*="gridTemplateColumns"] {
-    grid-template-columns: 1fr 20px 1fr !important;
+  #qualification section > div > div:last-child > div {
+    grid-template-columns: 1fr 24px 1fr !important;
     margin-bottom: 24px !important;
   }
 
+  #qualification section > div > div:last-child > div > div:first-child {
+    padding-right: 8px !important;
+  }
+
+  #qualification section > div > div:last-child > div > div:last-child {
+    padding-left: 8px !important;
+  }
+
   #qualification h4 {
-    font-size: 12px !important;
+    font-size: 13px !important;
   }
 
   #qualification p {
     font-size: 11px !important;
   }
+}
 
-  #qualification div[style*="paddingRight: 24px"] {
-    padding-right: 8px !important;
+@media (max-width: 480px) {
+  #qualification section > div > div:last-child > div {
+    grid-template-columns: 1fr 18px 1fr !important;
   }
 
-  #qualification div[style*="paddingLeft: 24px"] {
-    padding-left: 8px !important;
+  #qualification section > div > div:last-child > div > div:first-child {
+    padding-right: 4px !important;
+  }
+
+  #qualification section > div > div:last-child > div > div:last-child {
+    padding-left: 4px !important;
+  }
+
+  #qualification h4 {
+    font-size: 12px !important;
   }
 }
 
 /* ------------------------------------------------------------
    8. PROJECTS SECTION (#projects)
    ------------------------------------------------------------ */
-
 @media (max-width: 1024px) {
-  #projects div[style*="gridTemplateColumns"] {
+  #projects section > div {
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+
+  #projects section > div > div:nth-child(2) {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 20px !important;
   }
 }
 
 @media (max-width: 640px) {
-  #projects div[style*="padding: 0 32px"] {
-    padding: 0 16px !important;
+  #projects section {
+    padding: 30px 0 60px !important;
   }
 
-  #projects div[style*="gridTemplateColumns"] {
+  #projects section > div {
+    padding: 0 10px !important;
+  }
+
+  #projects section > div > div:nth-child(2) {
     grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    gap: 24px !important;
+  }
+
+  #projects a[target="_blank"] {
+    flex: 1 !important;
+    justify-content: center !important;
   }
 }
 
 /* ------------------------------------------------------------
    9. CONTACT SECTION (#contact)
    ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  #contact section > div {
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+}
 
 @media (max-width: 900px) {
-  #contact div[style*="gridTemplateColumns"] {
+  #contact section > div > div:nth-child(2) {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
@@ -505,36 +531,54 @@ nav[class*="fixed top-0"] {
 }
 
 @media (max-width: 640px) {
-  #contact div[style*="padding: 0 32px"] {
-    padding: 0 16px !important;
+  #contact section {
+    padding: 30px 0 60px !important;
+  }
+
+  #contact section > div {
+    padding: 0 10px !important;
   }
 }
 
 /* ------------------------------------------------------------
    10. FOOTER
    ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  footer > div {
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+
+  footer > div > div:first-child > div:nth-child(2),
+  footer > div > div:first-child > div:nth-child(3) {
+    margin-left: 0 !important;
+  }
+}
 
 @media (max-width: 768px) {
-  footer div[style*="padding: 0 32px"] {
+  footer {
+    padding-top: 40px !important;
+  }
+
+  footer > div {
     padding: 0 16px !important;
   }
 
-  footer div[style*="gridTemplateColumns"] {
+  footer > div > div:first-child {
     grid-template-columns: 1fr !important;
     gap: 28px !important;
     text-align: center !important;
-  }
-
-  footer div[style*="marginLeft: 80px"],
-  footer div[style*="marginLeft: 60px"] {
-    margin-left: 0 !important;
   }
 
   footer ul {
     align-items: center !important;
   }
 
-  footer div[style*="display: flex; gap: 18px"] {
+  footer div[style*="display: flex; gap: 18px"],
+  footer div[style*="display:flex; gap:18px"],
+  footer div[style*="display: flex; gap: 18px;"],
+  footer div[style*="display:flex;gap:18px"],
+  footer > div > div:first-child > div:nth-child(3) > div {
     justify-content: center !important;
   }
 }
