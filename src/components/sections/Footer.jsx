@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"; // Updated to modern X icon from fa6
+import Image from "next/image";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 const footerLinks = [
@@ -14,7 +15,7 @@ const footerLinks = [
 const socialLinks = [
   { icon: <FaGithub size={20} />, href: "https://github.com/Rabiul-Sujon/", label: "GitHub" },
   { icon: <FaLinkedin size={20} />, href: "https://www.linkedin.com/in/maven-rabiul/", label: "LinkedIn" },
-  { icon: <FaXTwitter size={20} />, href: "https://x.com/MavenRabi98070", label: "Twitter" }, // Swapped to modern X icon
+  { icon: <FaXTwitter size={20} />, href: "https://x.com/MavenRabi98070", label: "Twitter" },
   { icon: <MdEmail size={20} />, href: "mailto:alamrabiul889@gmail.com", label: "Email" },
 ];
 
@@ -52,9 +53,20 @@ export default function Footer() {
         >
           {/* Col 1 — Brand */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>
-            <h2 style={{ color: "#64FFDA", fontSize: "22px", fontWeight: 700, marginBottom: "12px" }}>
-              Rabiul Sujon
-            </h2>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border border-teal-400/30 shadow-[0_0_12px_rgba(100,255,218,0.2)] flex-shrink-0">
+                <Image
+                  src="/portfolio-logo.png"
+                  alt="Rabiul Sujon Logo"
+                  fill
+                  sizes="40px"
+                  className="object-cover"
+                />
+              </div>
+              <h2 style={{ color: "#64FFDA", fontSize: "22px", fontWeight: 700, margin: 0 }}>
+                Rabiul Sujon
+              </h2>
+            </div>
             <p style={{ color: "rgba(204,214,246,0.55)", fontSize: "13px", lineHeight: 1.7 }}>
               Full Stack Developer passionate about creating beautiful and functional web experiences.
             </p>
